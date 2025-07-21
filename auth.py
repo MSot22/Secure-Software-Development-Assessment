@@ -8,7 +8,7 @@ def hash_password(password):
 def login():
     db = Database.get_instance()
     username = input("Username: ")
-    password = getpass.getpass("Password: ")
+    password = input("Password: ")
     user = db.get_user(username)
     if user and user[2] == hash_password(password):
         print(f"Login successful. Welcome, {username} ({user[3]})!")
